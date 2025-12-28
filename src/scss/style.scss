@@ -1,0 +1,67 @@
+// style.scss
+
+// 1. 引入更強烈的字體
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Bebas+Neue&family=Noto+Sans+TC:wght@900&display=swap');
+
+// 2. 嘻哈配色定義
+$hiphop-black: #000000;
+$neon-yellow: #ccff00; // 螢光黃綠
+$street-red: #ff3e3e;
+
+body {
+  background-color: $hiphop-black;
+  color: white;
+  font-family: 'Noto Sans TC', sans-serif;
+  // 讓捲軸也有型
+  &::-webkit-scrollbar { width: 8px; }
+  &::-webkit-scrollbar-thumb { background: $neon-yellow; }
+}
+
+// 標題要有態度
+h1, h2, .navbar-brand {
+  font-family: 'Bebas Neue', cursive; 
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: $neon-yellow;
+}
+
+// 導覽列改成重黑色
+.custom-navbar {
+  background-color: $hiphop-black !important;
+  border-bottom: 3px solid $neon-yellow;
+  .navbar-brand { font-size: 2rem; }
+  .nav-link { color: white !important; font-weight: bold; }
+  .nav-link:hover { color: $neon-yellow !important; }
+}
+
+// 英雄區塊要有重擊感
+.hero-img {
+  height: 80vh;
+  position: relative;
+  &::after {
+    content: "OLD SCHOOL";
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 8vw;
+    font-family: 'Black Ops One';
+    color: rgba(204, 255, 0, 0.3);
+    z-index: 0;
+  }
+}
+
+// 特色卡片改為「雜誌切割」風格
+.feature-card {
+  background: #1a1a1a;
+  border: 2px solid white;
+  border-radius: 0;
+  transition: 0.2s;
+  &:hover {
+    background: $neon-yellow;
+    color: black;
+    transform: rotate(-2deg); // 歪斜感
+    border-color: black;
+    i { color: black; }
+  }
+  i { color: $neon-yellow; font-size: 3rem; }
+}
